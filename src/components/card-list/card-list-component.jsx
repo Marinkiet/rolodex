@@ -1,12 +1,12 @@
 import react from "react";
 import './card-list.styles.css';
+import {Card} from '../card/card.component';
 
 export const CardList = props=>(
     <div className="card-list">
         {props.monstors.map(monstor =>(
-        <h1 key= {monstor.id}>{monstor.name}</h1>
+        <Card key={monstor.id}monstor={monstor}/>
         ))}
     </div>
 );
 
-//timestamp 1:30:19
