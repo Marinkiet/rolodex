@@ -29,7 +29,7 @@ class App extends Component {
       monstor.address.city.toLowerCase().includes(searchField.toLowerCase()));
     return(
       <div className="App">
-       <h1>Hustlers</h1>
+       <h1>Hustlers Rolodex</h1>
         <SearchBox 
           placeholder= 'Search hustlers Location'
           handelChange = {this.handelChange}
