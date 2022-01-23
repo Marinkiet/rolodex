@@ -12,8 +12,12 @@ class App extends Component {
       searchField:''
       
     };
+    //use laxical scoping
+    //this.handleChange = handleChange.bind(this);
   }
-
+  handelChange=(e)=>{
+    this.setState({searchField: e.target.value}) ;
+  }
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
@@ -27,8 +31,8 @@ class App extends Component {
       <div className="App">
        <h1>Hustlers</h1>
         <SearchBox 
-        placeholder= 'Search hustlers Location'
-        handelchange = {e =>this.setState({searchField: e.target.value})}
+          placeholder= 'Search hustlers Location'
+          handelChange = {this.handelChange}
          />
          <CardList monstors={filteredMonstors}/>
 
